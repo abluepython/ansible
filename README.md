@@ -1,12 +1,14 @@
-# How to use it
+# How to
 
-First build the image on your local computer:
+First you have to build the image inside your computer:
 
 ```bash
-docker build -t abluepython/ansible .
+    docker build -t ansible .
 ```
 
-Second use the the bash scipt to ran a yml file:
+Next add your public and private ssh-key to the .ssh folder, then ran the command to get
+inside the docker container:
+
 ```bash
-./ansible_helper.sh main.yml
+    docker run --rm -it -v $(pwd):/ansible ansible
 ```
